@@ -51,7 +51,8 @@ img{
 }
 
 .messages-chat{
-    background-color: red;
+    background-image: url(./img/mine.jpg);
+    flex-grow: 2;
 }
 
 .div-input-message{
@@ -61,7 +62,20 @@ img{
 
 .input-message{
     width: 90%;
+    border: none;
 }
+
+.user-message{
+    background-color: #25D366;
+    width: 150px;
+}
+
+.answer-message, .user-message{
+    width: 150px
+}
+
+
+
 
 
 
