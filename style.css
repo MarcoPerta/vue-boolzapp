@@ -40,16 +40,6 @@
     flex-basis: 70%;
 }
 
-img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.f-sz-12px{
-    font-size: 12px;
-}
-
 .messages-chat{
     background-image: url(./img/mine.jpg);
     flex-grow: 2;
@@ -68,11 +58,27 @@ img{
 .user-message{
     background-color: #25D366;
     width: 150px;
+    margin-left: auto;
 }
 
 .answer-message, .user-message{
-    width: 150px
+    width: 150px;
+    border-radius: 8px 8px 8px 8px;
 }
+
+
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.f-sz-12px{
+    font-size: 12px;
+}
+
+
 
 
 
