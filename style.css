@@ -50,5 +50,18 @@ img{
     font-size: 12px;
 }
 
+.messages-chat{
+    background-color: red;
+}
+
+.div-input-message{
+    width: 90%;
+    margin: auto;
+}
+
+.input-message{
+    width: 90%;
+}
+
 
 
