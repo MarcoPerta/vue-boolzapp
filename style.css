@@ -42,3 +42,12 @@ img{
     border-radius: 50%;
     background-color: white; 
 }
+
+.input-bar{
+    border: none;
+    width: 85%;
+}
+
+.f-sz-chat-list{
+    font-size: 12px;
+}
