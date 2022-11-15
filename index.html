@@ -51,10 +51,10 @@
 
                 <!-- lista messaggi -->
                 <div class="d-flex justify-content-between py-2 bg-light">
-                    <div class="d-flex">
-                        <img src="./img/avatar_1.jpg" alt="" class="ms-1">  
+                    <div class="d-flex" v-for="(element, index) in contacts">
+                        <img :src='contacts.avatar' alt="" class="ms-1">  
                         <div>
-                            <span class="f-sz-12px"><strong>Michele</strong></span>
+                            <span class="f-sz-12px"><strong>{{name}}</strong></span>
                             <br>
                             <span class="text-muted f-sz-12px">Ultimo messaggio inviato</span>
                         </div>
