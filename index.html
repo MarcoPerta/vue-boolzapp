@@ -52,9 +52,9 @@
                 <!-- lista messaggi -->
                 <div class="d-flex flex-column justify-content-between py-2 bg-light">
                     <div class="d-flex" v-for="(element, index) in contacts">
-                        <img :src="contacts.avatar" alt="" class="ms-1">  
+                        <img :src="element.avatar" alt="" class="ms-1">  
                         <div>
-                            <span class="f-sz-12px"><strong>{{contacts.nome}}</strong></span>
+                            <span class="f-sz-12px"><strong>{{element.name}}</strong></span>
                             <br>
                             <span class="text-muted f-sz-12px">Ultimo messaggio inviato</span>
                         </div>
