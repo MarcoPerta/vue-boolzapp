@@ -50,18 +50,21 @@
                 </div>
 
                 <!-- lista messaggi -->
-                <div class="d-flex justify-content-between py-2 bg-light">
+                <div class="d-flex flex-column justify-content-between py-2 bg-light">
                     <div class="d-flex" v-for="(element, index) in contacts">
-                        <img :src='contacts.avatar' alt="" class="ms-1">  
+                        <img :src="contacts.avatar" alt="" class="ms-1">  
                         <div>
-                            <span class="f-sz-12px"><strong>{{name}}</strong></span>
+                            <span class="f-sz-12px"><strong>{{contacts.nome}}</strong></span>
                             <br>
                             <span class="text-muted f-sz-12px">Ultimo messaggio inviato</span>
                         </div>
+                        <div>
+                            <span class="text-muted f-sz-chat-list">12:00</span>
+                        </div>
                     </div>
-                    <div>
+                    <!-- <div>
                         <span class="text-muted f-sz-chat-list">12:00</span>
-                    </div>
+                    </div> -->
                 </div>
 
             <!-- parte destra della box -->
