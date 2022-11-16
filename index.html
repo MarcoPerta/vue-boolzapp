@@ -16,7 +16,7 @@
   <div id="root">
     <div class="background pt-3">
 
-        <div class="boolzapp-box">
+        <div class="boolzapp-box d-flex">
 
             <!-- parte sinistra del box -->
             <div class="list-chat">
@@ -56,10 +56,10 @@
                         <div>
                             <span class="f-sz-12px"><strong>{{element.name}}</strong></span>
                             <br>
-                            <span class="text-muted f-sz-12px">Ultimo messaggio inviato</span>
+                            <span class="text-muted f-sz-12px">{{element.messages[element.messages.length-1].message}}</span>
                         </div>
                         <div>
-                            <span class="text-muted f-sz-chat-list">12:00</span>
+                            <span class="text-muted f-sz-12px">{{element.messages[element.messages.length-1].date}}</span>
                         </div>
                     </div>
                     <!-- <div>
@@ -90,11 +90,11 @@
                 <!-- main della parte chat -->
                 <div class="messages-chat">
                     <div class="container">
-                        <div class="user-message d-flex flex-column mt-2">
+                        <div class="sent d-flex flex-column mt-2" v-for="messages in contacts">
                             <span>tutto OK?</span> 
                             <span class="align-self-end text-muted">12:00</span>
                         </div>
-                        <div class="answer-message bg-light d-flex flex-column mt-2">
+                        <div class="received bg-light d-flex flex-column mt-2">
                             <span>ok</span>
                             <span class="align-self-end text-muted">12:00</span>
                         </div>
