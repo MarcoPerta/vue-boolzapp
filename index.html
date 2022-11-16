@@ -87,11 +87,15 @@
                     </div>
                 </div>
 
+                <!-- mostrare tutti i messaggi do un singolo utente
+                ciclo contacts, cosi ho tutti gli elementi e il loro indice
+                nel primo span devo prendere tutti i messaggi 'sent'
+                nel secondo i mess 'received' -->
                 <!-- main della parte chat -->
                 <div class="messages-chat">
-                    <div class="container">
-                        <div class="sent d-flex flex-column mt-2" v-for="messages in contacts">
-                            <span>tutto OK?</span> 
+                    <div class="container" v-for="(element, index) in contacts">
+                        <div class="sent d-flex flex-column mt-2">
+                            <span>{{element.messages[0].message}}</span> 
                             <span class="align-self-end text-muted">12:00</span>
                         </div>
                         <div class="received bg-light d-flex flex-column mt-2">
