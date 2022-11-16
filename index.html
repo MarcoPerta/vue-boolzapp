@@ -51,7 +51,7 @@
 
                 <!-- lista messaggi -->
                 <div class="d-flex flex-column justify-content-between py-2 bg-light">
-                    <div class="d-flex" v-for="(element, index) in contacts">
+                    <div class="d-flex" v-for="(element, index) in contacts" @click="cambiachat(index)">
                         <img :src="element.avatar" alt="" class="ms-1">  
                         <div>
                             <span class="f-sz-12px"><strong>{{element.name}}</strong></span>
@@ -73,9 +73,9 @@
                 <!-- 'header' della parte chat -->
                 <div class="d-flex justify-content-between align-items-center bg-lhtgray py-1">
                     <div class="d-flex">
-                        <img src="./img/avatar_1.jpg" alt="" class="ms-1">  
+                        <img :src='contacts[variabiledinamica].avatar' alt="" class="ms-1">  
                         <div class="ms-1">
-                            <span class="f-sz-12px"><strong>Michele</strong></span>
+                            <span class="f-sz-12px"><strong>{{contacts[variabiledinamica].name}}</strong></span>
                             <br>
                             <span class="text-muted f-sz-12px">Ultimo messaggio alle 12:00</span>
                         </div>
@@ -87,21 +87,21 @@
                     </div>
                 </div>
 
-                <!-- mostrare tutti i messaggi do un singolo utente
-                ciclo contacts, cosi ho tutti gli elementi e il loro indice
-                nel primo span devo prendere tutti i messaggi 'sent'
-                nel secondo i mess 'received' -->
-                <!-- main della parte chat -->
+                
                 <div class="messages-chat">
-                    <div class="container" v-for="(element, index) in contacts">
-                        <div class="sent d-flex flex-column mt-2">
-                            <span>{{element.messages[0].message}}</span> 
-                            <span class="align-self-end text-muted">12:00</span>
+                    <div class="container">
+                        <div v-for="(element,index) in contacts[variabiledinamica].messages" :class="(element.status == 'sent') ? 'sent' : 'received'">
+                            <p class="sent d-flex flex-column mt-2">
+                                {{ element.message }}
+                            </p> 
+                        </div>
+                           
+                            <!-- <span class="align-self-end text-muted">12:00</span>
                         </div>
                         <div class="received bg-light d-flex flex-column mt-2">
                             <span>ok</span>
                             <span class="align-self-end text-muted">12:00</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

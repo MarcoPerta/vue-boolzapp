@@ -2,6 +2,7 @@ var app = new Vue(
     {
       el: '#root',
       data: {
+        variabiledinamica : 0,
         contacts: [
             {
             name: 'Michele',
@@ -107,7 +108,9 @@ var app = new Vue(
       
      },
       methods: {
-
+        cambiachat(index){
+            this.variabiledinamica = index;
+        }  
      }
     }
  );
