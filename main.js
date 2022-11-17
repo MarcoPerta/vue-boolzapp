@@ -3,6 +3,7 @@ var app = new Vue(
       el: '#root',
       data: {
         variabiledinamica : 0,
+        inputMessage : '',
         contacts: [
             {
             name: 'Michele',
@@ -107,10 +108,55 @@ var app = new Vue(
         ]
       
      },
+
       methods: {
-        cambiachat(index){
+        // cliccando su un utente restituisce la chat dell'utente cliccato
+        changeChat(index){
             this.variabiledinamica = index;
-        }  
+        }, 
+
+        getLastHourContacts(element){
+            let lastDate = element.messages[ element.messages.length-1].date;
+            lastDate = lastDate.split(' ');
+            
+            return lastDate[1];
+        },
+
+        // prova per mettere ultimo ora del messaggio nell'header della parte destra
+        // getLastHourContactsHeader(){
+        //     let lastDateHeader = this.contact[ messages].date;
+        //     lastDateHeader = lastDateHeader.split(' ');
+            
+        //     return lastDateHeader[1];
+        // },
+
+        getLastHourMessages(element){
+            let date = element.date;
+            date = date.split(' ');
+
+            return date[1];
+        },
+
+        sentMessage(){
+            let getMessage = this.contacts[this.variabiledinamica].messages;
+            getMessage.push( {
+                    date: '10/01/2020 15:50:00',
+                    message: this.inputMessage,
+                    status: 'sent'
+                    }
+            )
+
+            setTimeout( () => {
+                getMessage.push(
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'ok',
+                        status: 'received'
+                    }
+                )
+            },3000)
+            }
+        }
+
      }
-    }
  );
