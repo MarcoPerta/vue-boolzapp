@@ -46,12 +46,12 @@
                 <!-- searchbar -->
                 <div class="py-1 bg-light">
                     <i class="fa-solid fa-magnifying-glass text-secondary mx-1"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input-bar">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input-bar" v-model="inputSearchUser" v-on:keyup="searchUser()">
                 </div>
 
                 <!-- lista messaggi -->
                 <div class="d-flex flex-column justify-content-between py-2 bg-light">
-                    <div class="d-flex" v-for="(element, index) in contacts" @click="changeChat(index)">
+                    <div class="d-flex" v-for="(element, index) in contacts" @click="changeChat(index)" v-if="contacts[index].visible == true">
                         <img :src="element.avatar" alt="" class="ms-1">  
                         <div>
                             <span class="f-sz-12px"><strong>{{element.name}}</strong></span>
@@ -86,7 +86,7 @@
 
                 <!-- parte centrale -->
                 <div class="messages-chat">
-                    <div class="container overflow-hidden">
+                    <div class="container overflow-auto">
                         <div v-for="(element,index) in contacts[variabiledinamica].messages" :class="(element.status == 'sent') ? 'sent' : 'received'">
                             <p class="d-flex flex-column mt-2">
                                 {{ element.message }}
@@ -99,7 +99,7 @@
                 <!-- input per mandare messaggio -->
                 <div class="div-input-message">
                     <i class="fa-regular fa-face-smile mx-1"></i>
-                    <input type="text" placeholder="Invia un messaggio" class="input-message" v-model="inputMessage" @keyup.enter="sentMessage">
+                    <input type="text" placeholder="Invia un messaggio" class="input-message" v-model="inputMessage" @keyup.enter="sentMessage()">
                     <i class="fa-solid fa-microphone mx-1"></i>
                 </div>
 
