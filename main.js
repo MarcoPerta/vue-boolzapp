@@ -161,15 +161,20 @@ var app = new Vue(
         searchUser(){
             this.contacts.forEach((element,index) => {
                 let x = element.name.toLowerCase();
-                console.log(x)
                 if(x.includes(this.inputSearchUser.toLowerCase())){
                     return element.visible = true;
                 }else{
                     return element.visible = false;
                 }
             });
-        }    
+        },
+        
+        deleteMessage(element,index){
+        //   this.contacts.splice(index, 1); cosi elimina utente a sinistra dalla lista 
 
+        let messageActive = this.contacts[this.variabiledinamica].messages
+        messageActive.splice(index,1);
+ 
       }
-
+    }
      })

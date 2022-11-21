@@ -64,8 +64,9 @@
                     </div>
                 </div>
 
-            <!-- parte destra della box -->
             </div>
+
+            <!-- parte destra della box -->
             <div class="chat d-flex flex-column ">
                 <!-- 'header' della parte chat -->
                 <div class="d-flex justify-content-between align-items-center bg-lhtgray py-1">
@@ -88,10 +89,16 @@
                 <div class="messages-chat">
                     <div class="container overflow-auto">
                         <div v-for="(element,index) in contacts[variabiledinamica].messages" :class="(element.status == 'sent') ? 'sent' : 'received'">
-                            <p class="d-flex flex-column mt-2">
+                         
+                            <p class="d-flex flex-column mt-2" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ element.message }}
                             </p> 
+                            <ul class="dropdown-menu" style="">
+                              <li><a class="dropdown-item" href="#">Message info</a></li>
+                              <li><a class="dropdown-item" href="#" @click="deleteMessage(element,index)">Delete message</a></li>
+                            </ul>
                             <span class="align-self-end text-muted f-sz-12px">{{ getLastHourMessages(element) }}</span>
+          
                         </div>
                     </div>
                 </div>
